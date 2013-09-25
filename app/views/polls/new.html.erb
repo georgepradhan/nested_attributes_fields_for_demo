@@ -1,0 +1,13 @@
+Create a poll
+
+<%= form_for @poll do |poll_form| %>
+  Poll Title: <%= poll_form.text_field :title %>
+  <%= poll_form.fields_for :questions do |question_fields| %>
+    Question Title: <%= question_fields.text_field :title %>
+    <%= question_fields.fields_for :choices do |choice_fields| %>
+      Choice Title: <%= choice_fields.text_field :title %>
+    <% end %>
+  <% end %>
+  <%= poll_form.submit %>
+<% end %>
+

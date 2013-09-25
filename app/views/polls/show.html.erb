@@ -1,0 +1,13 @@
+<h1>Below is your poll</h1>
+
+<p><%=@poll.title%></p>
+<ol>
+  <% @poll.questions.each do |q| %>
+    <li><%=q.title%></li>
+    <ul>
+      <% q.choices.each do |c| %>
+        <li><%=c.title%></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ol>
